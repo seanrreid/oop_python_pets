@@ -15,3 +15,14 @@ class Pet:
     def be_alive(self):
         self.fullness -= self.hunger
         self.happiness -= self.mopiness
+
+cujo = Pet("Cujo")
+cujo.eat_food()
+print(cujo.fullness)
+print(cujo.happiness)
+
+benji = Pet("Benji")
+benji.get_love()
+print(benji.fullness)
+print(benji.happiness)
+

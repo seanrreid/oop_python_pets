@@ -25,18 +25,18 @@ def play_with_pet(pet):
 
 # Decrease a pet's attribute levels.
 def get_hungry_and_mopey(pet):
-    pet["fullness"] -= 5
-    pet["happiness"] -= 5
+    pet["fullness"] -= pet["hunger"]
+    pet["happiness"] -= pet["mopiness"]
 
 
 # Prompt the user to interact with the pet
 while True:
-
+    for pet in pets:
     print("""
 %s's stats:
 Fullness: %d
 Happiness: %d
-""" % (puppy["name"], puppy["fullness"], puppy["happiness"]))
+""" % (pet["name"], pet["fullness"], pet["happiness"]))
 
     choice = int(input("""
 1. Feed puppy
@@ -44,12 +44,15 @@ Happiness: %d
 3. Do nothing
 """))
     if choice == 1:
-        feed_pet(puppy)
+        which_pet = int(input("Which pet?"))
+        feed_pet(pets[which_pet])
     elif choice == 2:
-        play_with_pet(puppy)
+        which_pet = int(input("Which pet?"))
+        play_with_pet(pets[which_pet])
     else:
         pass
 
     # Each time the loop runs, the pet
     # will need some attention!
-    get_hungry_and_mopey(puppy)
+    for pet in pets:
+        get_hungry_and_mopey(pet)
