@@ -1,9 +1,19 @@
 # Define a dictionary that holds our pet's attributes.
-puppy = {
+puppy_1 = {
     "name": "Cujo",
     "fullness": 50,
     "happiness": 20,
+    "hunger": 7,
+    "mopiness": 4,
 }
+puppy_2 = {
+    "name": "Benji",
+    "fullness": 50,
+    "happiness": 100,
+    "hunger": 3,
+    "mopiness": 2,
+}
+pets = [puppy_1, puppy_2]
 
 # Define functions that increase a pet's attribute levels.
 def feed_pet(pet):
