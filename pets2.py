@@ -16,15 +16,19 @@ class Pet:
         self.fullness -= self.hunger
         self.happiness -= self.mopiness
 
-cujo = Pet("Cujo")
-print(cujo.name)
-print(cujo.fullness)
-cujo.eat_food()
-print(cujo.fullness)
-print(cujo.happiness)
+class CuddlyPet(Pet):
+    pass
 
-benji = Pet("Benji")
+
+benji = Pet("Benji", 50, 20, 20, 1)
+lassie = Pet("Lassie", 50, 20, 20, 1)
+clifford = Pet("Old Yeller", 50, 20, 20, 1)
+
+benji.eat_food()
+print("fullness", benji.fullness, "happiness", benji.happiness)
 benji.get_love()
-print(benji.fullness)
-print(benji.happiness)
+print("fullness", benji.fullness, "happiness", benji.happiness)
+benji.be_alive()
+print("fullness", benji.fullness, "happiness", benji.happiness)
+
 
