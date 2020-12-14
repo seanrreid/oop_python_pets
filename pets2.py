@@ -17,6 +17,8 @@ class Pet:
         self.happiness -= self.mopiness
 
 cujo = Pet("Cujo")
+print(cujo.name)
+print(cujo.fullness)
 cujo.eat_food()
 print(cujo.fullness)
 print(cujo.happiness)
