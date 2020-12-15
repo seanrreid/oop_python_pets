@@ -22,7 +22,7 @@ class Pet:
         fullness: %d
         Happiness: %d
         """ % (self.name, self.fullness, self.happiness)
-        
+
 
         
 class CuddlyPet(Pet):
@@ -39,9 +39,3 @@ class CuddlyPet(Pet):
         for i in range(self.cuddle_level):
             other_pet.get_love()
 
-benji = CuddlyPet("Benji")
-cujo = Pet("Cujo")
-print(cujo.name, cujo.fullness, cujo.happiness, cujo.hunger, cujo.mopiness)
-
-benji.cuddle(cujo)
-print(cujo.name, cujo.fullness, cujo.happiness, cujo.hunger, cujo.mopiness)

@@ -1,4 +1,4 @@
-from pet import Pet, CuddlyPet
+from pets import Pet, CuddlyPet
 
 # Begin with no pets.
 pets = []
@@ -34,9 +34,9 @@ def get_user_choice(choice_list):
             choice = int(input(choice_string))
             if choice <=0 or choice > len(choice_list):
                 raise ValueError
-            except ValueError:
+        except ValueError:
                 print_menu_error()
-            return choice
+        return choice
 
 def main():
     while True:
@@ -50,9 +50,19 @@ def main():
             elif type_choice == 2:
                 pets.append(CuddlyPet(pet_name))
             print("You now have %d pets" % len(pets))
-        
+        if choice == 2:
+            for pet in pets:
+                pet.get_love()
+        if choice ==3:
+            for pet in pets:
+                pet.eat_food()
         if choice == 4:
             for pet in pets:
                 print(pet)
+        if choice == 5:
+            # Pet levels naturally lower
+            for pet in pets:
+                pet.be_alive()
+        
 
 main()
