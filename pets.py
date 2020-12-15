@@ -35,13 +35,18 @@ class CuddlyPet(Pet):
         self.cuddle_level = cuddle_level
     
     def be_alive(self):
-        self.fullness -= self.hunger
+        super().be_alive(self)
         self.happiness -= self.mopiness/2
-        for toy in self.toys:
-            self.happiness += toy.use()
         
     def cuddle(self, other_pet):
         # Super cuddle powers, activate!
         for i in range(self.cuddle_level):
             other_pet.get_love()
+    def __str__(self):
+        return """
+        Extra CUDDlY %s:
+        Fullness: %d
+        Happiness: %d
+        """ % (self.name, self.fullness, self.happiness)
+
 
