@@ -6,6 +6,7 @@ class Pet:
         self.hunger = hunger
         self.mopiness = mopiness
         self.toys = []
+        self.treats = []
 
     def eat_food(self):
         self.fullness += 30
@@ -25,9 +26,13 @@ class Pet:
         fullness: %d
         Happiness: %d
         """ % (self.name, self.fullness, self.happiness)
+
     def get_toy(self, toy):
         self.toys.append(toy)
-
+    
+    def eat_treat(self, treat):
+        self.fullness += treat.yum
+        self.happiness += treat.joy
         
 class CuddlyPet(Pet):
     def __init__(self, name, fullness=50, hunger=5, cuddle_level=1):
