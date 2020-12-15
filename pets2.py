@@ -18,14 +18,15 @@ class Pet:
 
 
 class CuddlyPet(Pet):
-    pass
+    def cuddle(self, other_pet):
+        other_pet.get_love()
 
 
 
 benji = CuddlyPet("Benji", 50, 20, 20, 1)
 cujo = Pet("Cujo", 50, 10, 30, 10) # CUJO IS DIFFERENT FROM BENJI BECAUSE HE IS NOT AS HAPPY AS BENJI TO START OFF.
-print(benji.fullness, benji.happiness)
-# 50 20
-benji.be_alive()
-print(benji.fullness, benji.happiness)
-# 30 19
+print(cujo.happiness)
+# 10
+benji.cuddle(cujo)
+print(cujo.happiness)
+# 40    BUT FOR SOME REASON IM ONLY GETTING 10
