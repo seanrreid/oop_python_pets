@@ -1,5 +1,5 @@
 from pets import Pet, CuddlyPet
-
+from toy import Toy
 # Begin with no pets.
 pets = []
 
@@ -8,6 +8,7 @@ main_menu = [
     "Play with Pet",
     "Feed Pet",
     "View status of pets",
+    "Give a toy to all your pets",
     "Do Nothing",
 ]
 adoption_menu = [
@@ -60,7 +61,10 @@ def main():
             for pet in pets:
                 print(pet)
         if choice == 5:
-            # Pet levels naturally lower
+            for pet in pets:
+                pet.get_toy(Toy())
+        if choice == 6:
+            # Pet levels naturally lower.
             for pet in pets:
                 pet.be_alive()
         
