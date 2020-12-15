@@ -15,6 +15,14 @@ class Pet:
     def be_alive(self):
         self.fullness -= self.hunger
         self.happiness -= self.mopiness
+    
+    def __str__(self):
+        return """
+        %s:
+        fullness: %d
+        Happiness: %d
+        """ % (self.name, self.fullness, self.happiness)
+        
 
         
 class CuddlyPet(Pet):
