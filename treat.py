@@ -9,10 +9,10 @@ class ColdPizza(Treat):
 
 class Bacon(Treat):
     def __init__(self):
-        super():__init__(30, 30)
+        super().__init__(30, 30)
 
 class VeganSnack(Treat):
     def __init__(self):
-        super():__init__(2, 1)
+        super().__init__(2, 1)
 
 
